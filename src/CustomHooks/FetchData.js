@@ -15,11 +15,11 @@ export function useGetData(){
     return {babyData, getData:handleFetchData}
 };
 
-export function useGetDataSleep(){
+export function useGetDataSleep(baby_id){
     const [sleepData, setData] = useState([]);
 
     async function handleFetchData (){
-        const result = await sleepServerCalls.get();
+        const result = await sleepServerCalls.get(baby_id);
         setData(result)
     }
 

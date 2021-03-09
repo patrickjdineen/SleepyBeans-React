@@ -26,10 +26,10 @@ export const UpdateBaby = () =>{
             <label htmlFor="name">Baby's Name</label>
             <input type="text" name="name" id="name" placeholder="What is your Baby's Name" ref={ register }/>
 
-            <label htmlFor="birth_date">Hero Model</label>
-            <input type="date" name="birth_date" id="birth_date" placeholder="What is your Babys Birthday?" ref={ register }/>
+            <label htmlFor="birth_date">Baby Birthday </label>
+            <input type="date" name="birth_date" id="birth_date" ref={ register }/>
 
-            <Button variant="secondary" type="submit">Create Baby</Button>
+            <Button variant="secondary" type="submit">Update Baby</Button>
             </form>
     </Container>
     )

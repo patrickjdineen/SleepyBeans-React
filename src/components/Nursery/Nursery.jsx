@@ -27,7 +27,7 @@ export const Nursery = () => {
     return(
         <Container>
             <h4>If you have a new baby, click the button below to add them</h4>
-            <Button variant="secondary" onClick = { () => routeChange("",'create')}>Add a new Baby</Button>
+            <Button variant="secondary" onClick = { () => routeChange("",'createbaby')}>Add a new Baby</Button>
             {babyData.map( (item) =>(
                 <div key="item.id">
                     <CardGroup>

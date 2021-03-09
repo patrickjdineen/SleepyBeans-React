@@ -1,4 +1,4 @@
-const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJlMWZkM2I5My1iNjRhLTQyMDctOThhMC0zYWUwZjg4MzFmZDYiLCJpc3N1ZV90aW1lIjoiXCIyMDIxLTAzLTA5IDE2OjU1OjQ0LjI0NzM5NFwiIn0.NRp4iHGxz3dMf70F3WYeB-KL3QymBTuYcP5uLSze4dk"
+const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJmMTNiMjQyMC0zYTc4LTQyMGMtYmJiYy05ODAwNGZhM2Q0ZGIiLCJpc3N1ZV90aW1lIjoiXCIyMDIxLTAzLTA5IDIxOjIzOjU1LjIwMTk2NVwiIn0.vfgHzfVNzE7sSU7RrjtT9iyc6EIr0bOYFNvQhvbtSpM"
 
 
 export const babyServerCalls = {
@@ -105,7 +105,7 @@ export const sleepServerCalls = {
     update: async(baby_id,id,data={}) =>{
         console.log("check1")
         const response = await fetch(`/baby/${baby_id}/sleep/${id}`,{
-            method:'POST',
+            method:'PUT',
             headers:{
                 'Content-type':'application/json',
                 'x-access-token': `${token}`
