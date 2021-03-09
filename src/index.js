@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { Home, Sleep, Login, Signup} from './components';
+import { Home, Sleep, Signup, CreateAccount, Login} from './components';
 import {} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -18,11 +18,14 @@ ReactDOM.render(
       <Route path="/sleep">
         <Sleep />
       </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
       <Route path='/signup'>
         <Signup />
+      </Route>
+      <Route path='/createaccount'>
+        <CreateAccount />
+      </Route>
+      <Route path='/login'>
+        <Login />
       </Route>
     </Router>
   </React.StrictMode>,
