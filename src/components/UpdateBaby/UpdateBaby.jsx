@@ -1,7 +1,7 @@
 import React from 'react';
 import {useGetData} from '../../CustomHooks';
 import {useForm} from 'react-hook-form';
-import {useLocation} from 'react-router-dom';
+import {useLocation, useHistory} from 'react-router-dom';
 import {babyServerCalls} from '../../api';
 import {Container, Button} from 'react-bootstrap';
 
@@ -10,15 +10,15 @@ import {Container, Button} from 'react-bootstrap';
 //uses reactform to handle date to fill
 
 export const UpdateBaby = () =>{
+    const history = useHistory();
     const location= useLocation();
     const {register, handleSubmit}= useForm();
-    console.log(location)
     
     const onSubmit = (data) =>{
-    console.log(data)
-    babyServerCalls.update(location.state.id, data)
+    babyServerCalls.update(location.state.id, data);
     }
     
+
     return(
         <Container>
         <h1 className="page-title">Update Your Baby</h1>

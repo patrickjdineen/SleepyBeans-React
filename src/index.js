@@ -2,16 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { Home, Sleep, Login,CreateBaby, UpdateBaby, CreateAccount, Nursery} from './components';
-import {} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
+import logo from '../src/assets/images/logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Route,
+  Link,
 } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+    <Navbar bg="light" variant="light">
+    <Navbar.Brand>
+      <Link to="/">
+      <img
+        alt=""
+        src={logo}
+        width="30"
+        height="30"
+        className="d-inline-block align-top"
+      />{' '}
+      SleepyBeans
+      </Link>
+    </Navbar.Brand>
+    <Nav.Link>
+      <Link to='/nursery'>Nursery</Link></Nav.Link>
+      <Nav.Link>
+      <Link to='/login'>Log In</Link></Nav.Link>
+    <Nav.Link>
+      <Link to='/createaccount'>Sign Up</Link></Nav.Link>
+  </Navbar>
+    
       <Route exact path="/">
         <Home />
       </Route>
