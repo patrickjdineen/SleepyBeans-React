@@ -1,30 +1,30 @@
-import {createAccount, login} from '../api';
-import react, {useState, useEffect} from 'react';
+import {babyServerCalls, sleepServerCalls} from '../api';
+import React, {useState, useEffect} from 'react';
 
-export function useCreateAccountData(){
-    const [data, setData] = useState([]);
+export function useGetData(){
+    const [babyData, setData] = useState([]);
 
     async function handleFetchData (){
-        const result = await createAccount.get();
+        const result = await babyServerCalls.get();
         setData(result)
     }
 
     useEffect(()=> {
         handleFetchData();
     }, [])
-    return {data, getData:handleFetchData}
+    return {babyData, getData:handleFetchData}
 };
 
-export function useLoginData(){
-    const [data, setData] = useState([]);
+export function useGetDataSleep(){
+    const [sleepData, setData] = useState([]);
 
     async function handleFetchData (){
-        const result = await login.get();
+        const result = await sleepServerCalls.get();
         setData(result)
     }
 
     useEffect(()=> {
         handleFetchData();
     }, [])
-    return {data, getData:handleFetchData}
+    return {sleepData, getData:handleFetchData}
 };

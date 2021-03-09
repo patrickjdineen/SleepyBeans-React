@@ -1,17 +1,47 @@
-import react from 'react';
+import React, {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
-import {createAccount} from '../../api';
 import {Container,Row,Col, Button} from 'react-bootstrap';
 
 
 export const CreateAccount = () =>{
 
     const {register, handleSubmit}= useForm();
+
+    const createAccount = {
+        create: async (data={}) =>{
+            const response = await fetch(`/signup`,{
+                method:'POST',
+                headers:{
+                    'Content-type':'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            if (!response.ok){
+                throw new Error ('We could not create your new hero')
+            } 
+            return await response.json()
+        },
+    };
+
+    function useCreateAccountData(){
+        const [data, setData] = useState([]);
     
+        async function handleFetchData (){
+            const result = await createAccount.get();
+            setData(result)
+        }
+    
+        useEffect(()=> {
+            handleFetchData();
+        }, [])
+        return {data, getData:handleFetchData}
+    };
+
     const onSubmit = (data) =>{
         console.log(data)
         createAccount.create(data)
     }
+    
     
     return(
         <Container>
