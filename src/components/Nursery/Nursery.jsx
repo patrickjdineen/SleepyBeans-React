@@ -38,11 +38,11 @@ export const Nursery = () => {
                                 {item.name}
                             </Card.Title>
                             <Card.Text>
-                                {item.birth_date}
+                                Birthday - {item.birth_date}
                             </Card.Text>
-                            <Button variant="primary" onClick = { () => routeChange(item.id,'sleep')}>start sleep</Button>
-                            <Button variant="secondary" onClick = { () => routeChange(item.id,'update')}>Update Baby</Button>
-                            <Button variant="danger" onClick = {()=> deleteBaby(item.id)}>Delete Baby</Button>
+                            <Button variant="primary" onClick = { () => routeChange(item.id,'sleep')}>Sleep</Button>
+                            <Button variant="secondary" onClick = { () => routeChange(item.id,'update')}>Update</Button>
+                            <Button variant="danger" onClick = {()=> deleteBaby(item.id)}>Remove </Button>
                         </Card.Body>
                     </Card>
                     </CardGroup>

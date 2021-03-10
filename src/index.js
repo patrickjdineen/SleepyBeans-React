@@ -28,7 +28,7 @@ ReactDOM.render(
       </Link>
     </Navbar.Brand>
     <Nav.Link>
-      <Link to='/nursery'>Nursery</Link></Nav.Link>
+      <Link to='/nursery'>Your Nursery</Link></Nav.Link>
       <Nav.Link>
       <Link to='/login'>Log In</Link></Nav.Link>
     <Nav.Link>

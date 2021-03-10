@@ -32,6 +32,9 @@ export const Sleep = () =>{
             <input type="text" name="sleep_type" id="sleep_type" placeholder="What kind of sleep?" ref={ register }/>
             <Button variant="secondary" type="submit">Start Sleep</Button>
             </form>
+            <h3>
+                Here are the current sleep sessions for your baby.
+            </h3>
             {sleepData.map( (item) =>(
                 <div key="item.id">
                     <CardGroup>
