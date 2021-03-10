@@ -1,7 +1,9 @@
-const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJmMTNiMjQyMC0zYTc4LTQyMGMtYmJiYy05ODAwNGZhM2Q0ZGIiLCJpc3N1ZV90aW1lIjoiXCIyMDIxLTAzLTA5IDIxOjIzOjU1LjIwMTk2NVwiIn0.vfgHzfVNzE7sSU7RrjtT9iyc6EIr0bOYFNvQhvbtSpM"
+//TODO  -remote in place of proper JWT handling
+const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJlMWZkM2I5My1iNjRhLTQyMDctOThhMC0zYWUwZjg4MzFmZDYiLCJpc3N1ZV90aW1lIjoiXCIyMDIxLTAzLTEwIDAzOjUwOjExLjE1MTQ4NlwiIn0.8sNVsJFL1iSXldwrxtRKmtPTwKXZBpd_fRCte2mo72w"
 
-
+//Server Calls for baby
 export const babyServerCalls = {
+    
     get: async () =>{
         const response = await fetch(`/baby`,{
             method:'GET',

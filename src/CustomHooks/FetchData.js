@@ -1,5 +1,5 @@
 import {babyServerCalls, sleepServerCalls} from '../api';
-import React, {useState, useEffect} from 'react';
+import Z, {useState, useEffect} from 'react';
 
 export function useGetData(){
     const [babyData, setData] = useState([]);
@@ -7,11 +7,13 @@ export function useGetData(){
     async function handleFetchData (){
         const result = await babyServerCalls.get();
         setData(result)
+        console.log("useget1")
     }
-
     useEffect(()=> {
         handleFetchData();
+        console.log("useget2")
     }, [])
+    console.log("useget3")
     return {babyData, getData:handleFetchData}
 };
 

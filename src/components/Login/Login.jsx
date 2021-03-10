@@ -47,18 +47,27 @@ export const Login = () =>{
         <Container>
             <Row>
                 <Col>
-                    <h1>Create Your Account</h1>
-                    <form onSubmit = {handleSubmit(onSubmit)}>
-                        <label htmlFor="email_address">Email Address</label>
-                        <input type="text" name="email_address" id="email_address" placeholder="email_address" ref={ register }/>
-                        
-                        <label htmlFor="password">Password</label>
-                        <input type="text" name="password" id="password" placeholder="password" ref={ register }/>
-
-                        <Button variant="secondary" type="submit">Sign Up</Button>
-                        
-                        </form>
                 </Col>
+                <Col>
+                    <h1>Log In To Your Account</h1>
+                    
+                <form className="container wasValidated" onSubmit = {handleSubmit(onSubmit)}>
+                    
+                    <div className="form-group">
+                        <label htmlFor="email_address">Email Address</label>
+                        <input type="text" name="email_address" id="email_address" placeholder="email_address"  className="form-control"ref={ register }/>
+                    </div>
+    
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="text" name="password" id="password" placeholder="password" className="form-control" ref={ register }/>
+                    </div>
+    
+                        <Button variant="secondary" type="submit">Sign Up</Button>
+                    
+                    </form>
+                </Col>
+                
             </Row>
     </Container>
     )

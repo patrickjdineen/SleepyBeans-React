@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
-import {Container,Row,Col, Button} from 'react-bootstrap';
+import {Container,Row,Col, Button, Form} from 'react-bootstrap';
+import '../../styles.css'
 
 
 export const CreateAccount = () =>{
@@ -46,24 +47,38 @@ export const CreateAccount = () =>{
     return(
         <Container>
             <Row>
+                
                 <Col>
-                    <h1>Create Your Account</h1>
-                    <form onSubmit = {handleSubmit(onSubmit)}>
-                        <label htmlFor="first_name">First Name</label>
-                        <input type="text" name="first_name" id="first_name" placeholder="What is your first name?" ref={ register }/>
+                <h1>Create Your Account</h1>
+                
+                <form className="container wasValidated" onSubmit = {handleSubmit(onSubmit)}>
 
-                        <label htmlFor="last_name">Last Name</label>
-                        <input type="text" name="last_name" id="last_name" placeholder="What is your last name" ref={ register }/>
+                <div className="form-group">
+                    <label htmlFor="first_name">First Name</label>
+                    <input type="text" name="first_name" id="first_name" placeholder="What is your first name?" className="form-control" ref={ register }/>
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="last_name">Last Name</label>
+                    <input type="text" name="last_name" id="last_name" placeholder="What is your last name" className="form-control" ref={ register }/>
+                </div>
 
-                        <label htmlFor="email_address">Email Address</label>
-                        <input type="text" name="email_address" id="email_address" placeholder="email_address" ref={ register }/>
-                        
-                        <label htmlFor="password">Password</label>
-                        <input type="text" name="password" id="password" placeholder="password" ref={ register }/>
+                <div className="form-group">
+                    <label htmlFor="email_address">Email Address</label>
+                    <input type="text" name="email_address" id="email_address" placeholder="email_address"  className="form-control"ref={ register }/>
+                </div>
 
-                        <Button variant="secondary" type="submit">Sign Up</Button>
-                        
-                        </form>
+                <div className="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input type="text" name="password" id="password" placeholder="password" className="form-control" ref={ register }/>
+                </div>
+
+                    <Button variant="secondary" type="submit">Sign Up</Button>
+                
+                </form>
+                    
+                </Col>
+                <Col>
                 </Col>
             </Row>
     </Container>

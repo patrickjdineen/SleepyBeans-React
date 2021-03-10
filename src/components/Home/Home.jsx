@@ -1,10 +1,15 @@
 import React from 'react';
+import '../../styles.css'
+import {} from 'react-bootstrap';
 
 export const Home = ()=>{
     return(
-        <div>
-            <h1>Welcome to SleepyBeans</h1>
-            <p>A login page will go here eventually</p>
-        </div>
+        <header className="banner-image">
+            <div className="banner-text">
+                <h1>Welcome to SleepyBeans</h1>
+                <h4>A place for babies (and their parents!)<br/>to get some rest</h4>
+
+            </div>
+        </header>
     );
 }
