@@ -6,13 +6,13 @@ import {Container, Button} from 'react-bootstrap';
 
 
 export const CreateBaby = () =>{
+    
     const history = useHistory();
     const {register, handleSubmit}= useForm();
     
     const onSubmit = (data) =>{
-        console.log(data)
         babyServerCalls.create(data)
-        .then(history.push('/nursery'));
+        .then(history.push('/nursery'))
     }
     
     return(

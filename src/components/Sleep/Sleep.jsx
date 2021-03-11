@@ -24,13 +24,9 @@ export const Sleep = () =>{
         getData()
     }
 
-    if (sleepData.length === 0){
-        return (<div>
-            <h1>test return</h1>
-            {console.log("first block")}
-            </div>)
-    } else {return(
+    return(
         <Container>
+            <div className="text-center">
             <h1 className="page-title">Start a new Sleep Session</h1>
             <form onSubmit = {handleSubmit(onSubmit)}>
             <input type="text" name="sleep_type" id="sleep_type" placeholder="What kind of sleep?" ref={ register }/>
@@ -39,12 +35,13 @@ export const Sleep = () =>{
             <h3>
                 Here are the current sleep sessions for your baby.
             </h3>
+            </div>
             <Row>
             <Col>
             {sleepData.map( (item) =>(
                 <div key="item.id">
-                    <CardGroup>
-                    <Card style={{width: '20rem'}}>
+                    <CardGroup className="text-center">
+                    <Card>
                         <Card.Body>
                             <Card.Title className="page-title">
                                 {item.sleep_type}
@@ -58,7 +55,7 @@ export const Sleep = () =>{
                                 {item.end_time}
                             </Card.Text>
                             <Card.Text>
-                                <p>Total Sleep</p>
+                                <p>Total Sleep Time</p>
                                 {item.sleep_duration}
                             </Card.Text>
                             <Button variant="danger" onClick = {()=> endSleep(item.id)}> Stop Sleep</Button>
@@ -72,4 +69,4 @@ export const Sleep = () =>{
             </Row>
         </Container>
     )
-    }}
+    }

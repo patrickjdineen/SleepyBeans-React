@@ -37,29 +37,33 @@ export const Nursery = () => {
     
     return(
         <Container>
-            <h2>Welcome {currentUser.email}</h2>
+            <div className="text-center">
+            <h2 className="text-center">Welcome {currentUser.email}</h2> 
+            <Button variant="danger"  onClick={handleLogout}>Log Out</Button>
             <h4>If you have a new baby, click the button below to add them</h4>
             
-            <Button variant="link" onClick={handleLogout}>Log Out</Button>
-
             <Button variant="secondary" onClick = { () => routeChange("",'createbaby')}>Add a new Baby</Button>
+            </div>
+            
             <Row>
                 <Col>
                 {/*TODO - Add condition to only map if array length > 0 here and on sleep sessions*/}
                 {babyData.map( (item) =>(
-                    <div key="item.id">
+                    <div key="item.id" className="mt-4">
                         <CardGroup>
-                        <Card style={{width: '20rem'}}>
+                        <Card>
                             <Card.Body>
-                                <Card.Title className="page-title">
+                                <Card.Title className="page-title text-center">
                                     {item.name}
                                 </Card.Title>
-                                <Card.Text>
+                                <Card.Text className= "text-center">
                                     Birthday - {item.birth_date}
                                 </Card.Text>
-                                <Button variant="primary" onClick = { () => routeChange(item.id,'sleep')}>Sleep</Button>
-                                <Button variant="secondary" onClick = { () => routeChange(item.id,'update')}>Update</Button>
-                                <Button variant="danger" onClick = {()=> deleteBaby(item.id)}>Remove </Button>
+                                <div className="d-flex justify-content-center">
+                                <Button className="mx-1 text-center" variant="primary" onClick = { () => routeChange(item.id,'sleep')}>Sleep</Button>
+                                <Button className="mx-1 text-center" variant="secondary" onClick = { () => routeChange(item.id,'update')}>Update</Button>
+                                <Button className="mx-1 text-center" variant="danger" onClick = {()=> deleteBaby(item.id)}>Remove </Button>
+                                </div>
                             </Card.Body>
                         </Card>
                         </CardGroup>

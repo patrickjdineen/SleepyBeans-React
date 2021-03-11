@@ -2,7 +2,7 @@ import React, { useRef, useState} from 'react';
 import {Container, Col, Row, Form, Button, Alert} from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import {Link, useHistory} from 'react-router-dom';
-import { auth } from '../firebase';
+
 
 export default function Login() {
     const emailRef = useRef()
