@@ -1,74 +1,53 @@
-import React, {useState, useEffect} from 'react';
-import {useForm} from 'react-hook-form';
-import {Container,Row,Col, Button} from 'react-bootstrap';
+import React, {useState} from 'react';
+import {Redirect} from "react-router-dom";
+import {Container, Row, Col} from 'react-bootstrap';
 
+export const Login = (props) => {
+    const [email_address, setEmail_address] = useState('');
+    const [password, setPassword] = useState('');
+    const [redirect, setRedirect] = useState(false);
 
-export const Login = () =>{
-    const {register, handleSubmit}= useForm();
-    const loginAccount = {
-        create: async (data={}) =>{
-            console.log("checkpoint login")
-            console.log(data)
-            console.log(data.email_address)
-            const response = await fetch(`/login`,{
-                method:'GET',
-                headers:{
-                    'Authorization': 'Basic '+btoa(`${data.email_address}:${data.password}`),
-                },
-            });
-            if (!response.ok){
-                throw new Error ('We could not create your new hero')
-            } 
-            return await response.json()
-        },
-    };
+    const submit = async (e) => {
+        e.preventDefault();
 
-    function useCreateAccountData(){
-        const [data, setData] = useState([]);
-        async function handleFetchData (){
-            const result = await loginAccount.get();
-            setData(result)
-            console.log("checkpoint useCreate A")
-        }
-        useEffect(()=> {
-            handleFetchData();
-        }, [])
-        console.log("useCreate B")
-        return {data, getData:handleFetchData}
-    };
+        const response = await fetch(`/login`,{
+            method:'GET',
+            headers:{
+                'Authorization': 'Basic '+btoa(`${email_address}:${password}`),
+            },
+            credentials:'include'
+        })
+        const content = await response.json();
 
-    const onSubmit = (data) =>{
-        console.log(data)
-        loginAccount.create(data)
-        console.log("checkpoint onSubmit")
+        setRedirect(true);
     }
-    
-    return(
+
+    if (redirect) {
+        return <Redirect to="/"/>;
+    }
+
+    return (
         <Container>
             <Row>
-                <Col>
-                </Col>
-                <Col>
-                    <h1>Log In To Your Account</h1>
-                    
-                <form className="container wasValidated" onSubmit = {handleSubmit(onSubmit)}>
-                    
-                    <div className="form-group">
-                        <label htmlFor="email_address">Email Address</label>
-                        <input type="text" name="email_address" id="email_address" placeholder="email_address"  className="form-control"ref={ register }/>
-                    </div>
-    
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <input type="text" name="password" id="password" placeholder="password" className="form-control" ref={ register }/>
-                    </div>
-    
-                        <Button variant="secondary" type="submit">Sign Up</Button>
-                    
-                    </form>
-                </Col>
-                
-            </Row>
-    </Container>
-    )
-}
+            <Col>
+        <form onSubmit={submit}>
+            <h1>Please sign in</h1>
+            <div className="form-group">
+                <input type="email" className="form-control" placeholder="Email address" required
+                    onChange={e => setEmail_address(e.target.value)}/>
+            </div>  
+
+            <div className="form-group">
+            <input type="password" className="form-control" placeholder="Password" required
+                    onChange={e => setPassword(e.target.value)}/>
+            </div>
+
+            <button variant="secondary" type="submit">Sign in</button>
+        </form>
+        </Col>
+        </Row>
+        </Container>
+    );
+};
+
+export default Login;

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../../styles.css'
 import {} from 'react-bootstrap';
 
 export const Home = ()=>{
+
     return(
         <header className="banner-image">
             <div className="banner-text">
