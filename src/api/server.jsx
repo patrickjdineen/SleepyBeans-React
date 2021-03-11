@@ -1,6 +1,3 @@
-//TODO  -remote in place of proper JWT handling
-import tok from '../components/Login/Login';
-
 let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJlMWZkM2I5My1iNjRhLTQyMDctOThhMC0zYWUwZjg4MzFmZDYiLCJpc3N1ZV90aW1lIjoiXCIyMDIxLTAzLTEwIDIyOjQ5OjQ2Ljk5NDkzNVwiIn0.NkYbuc1U8zZ5ewsVJK54IDENpUBMO6jqqYyoxFyt2To"
 
 //Server Calls for baby

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {babyServerCalls} from '../../api'
+import { useAuth } from '../../contexts/AuthContext';
 import {Button,Card, Container, CardGroup, Row, Col} from 'react-bootstrap';
 import {useGetData} from '../../CustomHooks';
 import {useHistory} from 'react-router-dom';
 
 export const Nursery = () => {
-    
+    const [error, setError]= useState("")
+    const { currentUser, logout } = useAuth()
     const history = useHistory();
 
     const routeChange = (id,path) =>{
@@ -20,16 +22,26 @@ export const Nursery = () => {
     }
 
     let {babyData, getData} = useGetData();
-    console.log(babyData)
     
-    if (babyData.length === 0){
-        return (<div>
-            <h1>test return</h1>
-            {console.log("first block")}
-            </div>)
-    } else {return(
+    async function handleLogout(){
+        setError("")
+        try{
+            await logout()
+            history.push('/login')
+        }catch{
+            setError('failed to logout')
+        }
+    }
+    
+
+    
+    return(
         <Container>
+            <h2>Welcome {currentUser.email}</h2>
             <h4>If you have a new baby, click the button below to add them</h4>
+            
+            <Button variant="link" onClick={handleLogout}>Log Out</Button>
+
             <Button variant="secondary" onClick = { () => routeChange("",'createbaby')}>Add a new Baby</Button>
             <Row>
                 <Col>
@@ -57,4 +69,3 @@ export const Nursery = () => {
             </Row>
         </Container>
     )}
-}
