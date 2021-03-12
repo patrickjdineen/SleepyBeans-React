@@ -17,7 +17,7 @@ export const CreateBaby = () =>{
     
     return(
         <Container>
-        <h1>Create Your New Baby</h1>
+        <h1>Add your child to our sleep tracker</h1>
         <form onSubmit = {handleSubmit(onSubmit)}>
         <div className="form-group">
             <label htmlFor="name">Baby's Name</label>

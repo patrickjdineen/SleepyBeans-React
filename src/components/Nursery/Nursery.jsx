@@ -54,7 +54,7 @@ export const Nursery = () => {
                         <Card>
                             <Card.Body>
                                 <Card.Title className="page-title text-center">
-                                    {item.name}
+                                    <h1>{item.name}</h1>
                                 </Card.Title>
                                 <Card.Text className= "text-center">
                                     Birthday - {item.birth_date}

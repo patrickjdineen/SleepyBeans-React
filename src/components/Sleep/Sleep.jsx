@@ -36,35 +36,36 @@ export const Sleep = () =>{
                 Here are the current sleep sessions for your baby. 
             </h3>
             </div>
+
             <Row>
             <Col>
             {sleepData.map( (item) =>(
-                <div key="item.id">
-                    <CardGroup className="text-center">
+                <div key="item.id" className="mt-4">
+                    <CardGroup>
                     <Card>
                         <Card.Body>
-                            <Card.Title className="page-title">
-                                {item.sleep_type}
+                            <Card.Title className="page-title text-center">
+                                <h1>{item.sleep_type}</h1>
                             </Card.Title>
-                            <Card.Text>
-                                <p>Start Time</p>
+                            <Card.Text className="text-center">
+                                <p><strong>Start Time</strong></p>
                                 {item.start_time}
                             </Card.Text>
-                            <Card.Text>
-                                <p>End Time </p>
+                            <Card.Text className="text-center">
+                                <p><strong>End Time</strong> </p>
                                 {item.end_time}
                             </Card.Text>
-                            <Card.Text>
-                                <p>Total Sleep Time</p>
+                            <Card.Text className="text-center">
+                                <p><strong>Total Sleep Time</strong></p>
                                 {item.sleep_duration}
                             </Card.Text>
+                            <div className="d-flex justify-content-center">
                             <Button variant="danger" onClick = {()=> endSleep(item.id)}> Stop Sleep</Button>
+                            </div>
                         </Card.Body>
                     </Card>
                     </CardGroup>
                 </div>))}
-            </Col>
-            <Col>
             </Col>
             </Row>
         </Container>
