@@ -33,7 +33,7 @@ export const Sleep = () =>{
             <Button variant="secondary" type="submit">Start Sleep</Button>
             </form>
             <h3>
-                Here are the current sleep sessions for your baby.
+                Here are the current sleep sessions for your baby. 
             </h3>
             </div>
             <Row>
