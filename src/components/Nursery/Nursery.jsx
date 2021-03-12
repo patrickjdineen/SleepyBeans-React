@@ -34,7 +34,11 @@ export const Nursery = () => {
     }
     
 
-    
+    if (babyData.length === 0){
+        return (
+            <div>No Data</div>
+        )
+    }
     return(
         <Container>
             <div className="text-center">
