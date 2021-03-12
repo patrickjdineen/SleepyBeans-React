@@ -8,7 +8,7 @@ import { AuthProvider } from './contexts/AuthContext';
 // import { AuthCheck, FirebaseAppProvider } from 'reactfire';
 // import { firebaseConfig } from './firebase';
 
-import { Home, Sleep, CreateBaby, UpdateBaby, Nursery} from './components';
+import { Home, Sleep, CreateAccount, CreateBaby, UpdateBaby, Nursery, Loginb} from './components';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute'
@@ -33,15 +33,19 @@ ReactDOM.render(
       </Navbar.Brand>
       
       <Nav.Link><Link to='/nursery'>Nursery</Link></Nav.Link> 
-      <Nav.Link><Link to='/login'>Log In</Link></Nav.Link>
-      <Nav.Link><Link to='/signup'>Sign Up</Link></Nav.Link>
+      <Nav.Link><Link to='/login'>Log In Firebase</Link></Nav.Link>
+      <Nav.Link><Link to='/signup'>Sign Up Firebase</Link></Nav.Link>
+      <Nav.Link><Link to='/loginb'>Log In Flask</Link></Nav.Link>
+      <Nav.Link><Link to='/signupb'>Sign Up Flask</Link></Nav.Link>
     </Navbar>
 
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/sleep" component={Sleep} />
       <Route path='/login' component = {Login} />
+      <Route path='/loginb' component = {Loginb} />
       <Route path='/signup' component = {Signup} />
+      <Route path='/signupb' component = {CreateAccount} />
       <Route path='/createbaby' component = {CreateBaby} />
       <Route path='/update' component={UpdateBaby} />
       <PrivateRoute path='/nursery' component={Nursery} />

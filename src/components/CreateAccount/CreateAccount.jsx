@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 import {Container,Row,Col, Button, Form} from 'react-bootstrap';
-import '../../styles.css'
+import '../../styles.css';
+import { useHistory } from 'react-router-dom';
 
 
 export const CreateAccount = () =>{
 
     const {register, handleSubmit}= useForm();
+    const history = useHistory()
 
     const createAccount = {
         create: async (data={}) =>{
@@ -41,6 +43,7 @@ export const CreateAccount = () =>{
     const onSubmit = (data) =>{
         console.log(data)
         createAccount.create(data)
+        history.push('/loginb')
     }
     
     
