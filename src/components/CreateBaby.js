@@ -1,11 +1,11 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import {useHistory} from 'react-router-dom';
-import {babyServerCalls} from '../../api';
+import {babyServerCalls} from '../api';
 import {Container, Button} from 'react-bootstrap';
 
 
-export const CreateBaby = () =>{
+const CreateBaby = () =>{
     
     const history = useHistory();
     const {register, handleSubmit}= useForm();
@@ -34,3 +34,5 @@ export const CreateBaby = () =>{
     </Container>
     )
 }
+
+export default CreateBaby

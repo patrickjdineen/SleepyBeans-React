@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {babyServerCalls} from '../../api'
-import { useAuth } from '../../contexts/AuthContext';
+import {babyServerCalls} from '../api'
+import { useAuth } from '../contexts/AuthContext';
 import {Button,Card, Container, CardGroup, Row, Col} from 'react-bootstrap';
-import {useGetData} from '../../CustomHooks';
+import {useGetData} from '../CustomHooks';
 import {useHistory} from 'react-router-dom';
 
-export const Nursery = () => {
+const Nursery = () => {
     const [error, setError]= useState("")
     const { currentUser, logout } = useAuth()
     const history = useHistory();
@@ -76,4 +76,6 @@ export const Nursery = () => {
                 </Col>
             </Row>
         </Container>
-    )}
+    )};
+
+export default Nursery

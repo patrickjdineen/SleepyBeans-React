@@ -8,10 +8,16 @@ import { AuthProvider } from './contexts/AuthContext';
 // import { AuthCheck, FirebaseAppProvider } from 'reactfire';
 // import { firebaseConfig } from './firebase';
 
-import { Home, Sleep, CreateAccount, CreateBaby, UpdateBaby, Nursery, Loginb} from './components';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import PrivateRoute from './components/PrivateRoute'
+import PrivateRoute from './components/PrivateRoute';
+import Nursery from './components/Nursery';
+import UpdateBaby from './components/UpdateBaby';
+import CreateAccount from './components/CreateAccount';
+import Loginb from './components/Loginb';
+import Home from './components/Home';
+import Sleep from './components/Sleep';
+import CreateBaby from './components/CreateBaby';
 
 
 ReactDOM.render(

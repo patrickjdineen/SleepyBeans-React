@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import '../../styles.css'
+import '../styles.css'
 import {} from 'react-bootstrap';
 
-export const Home = ()=>{
+const Home = ()=>{
 
     return(
         <header className="banner-image">
@@ -14,3 +14,4 @@ export const Home = ()=>{
         </header>
     );
 }
+export default Home

@@ -3,11 +3,9 @@ import {useForm} from 'react-hook-form';
 import {Container,Row,Col, Button} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
 
-export let tok = {}
-console.log(tok)
+let tok = ""
 
-
-export const Loginb = () =>{
+const Loginb = () =>{
     const {register, handleSubmit}= useForm();
     const history = useHistory()
 
@@ -66,3 +64,5 @@ export const Loginb = () =>{
     </Container>
     )
 }
+
+export default Loginb

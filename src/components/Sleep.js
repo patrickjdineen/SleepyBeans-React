@@ -1,15 +1,12 @@
 import React from 'react';
-import {useGetDataSleep} from '../../CustomHooks';
+import {useGetDataSleep} from '../CustomHooks';
 import {useForm} from 'react-hook-form';
 import {useLocation} from 'react-router-dom';
-import {sleepServerCalls} from '../../api';
+import {sleepServerCalls} from '../api';
 import {Container,Card,CardGroup, Button,Col, Row} from 'react-bootstrap';
 
-//Page for updating heros.
-//gathers location from the previous clickthrough using history to bind the update of a hero to the ID selected from the herospage.
-//uses reactform to handle date to fill
 
-export const Sleep = () =>{
+const Sleep = () =>{
     const location= useLocation();
     const {register, handleSubmit}= useForm();
 
@@ -24,7 +21,6 @@ export const Sleep = () =>{
         getData()
     }
 
-   
     return(
         <Container>
             <div className="text-center">
@@ -34,7 +30,7 @@ export const Sleep = () =>{
             <Button variant="secondary" type="submit">Start Sleep</Button>
             </form>
             <h3>
-                Here are the current sleep sessions for your baby. 
+                Here are the current sleep sessions for your baby:
             </h3>
             </div>
 
@@ -71,4 +67,6 @@ export const Sleep = () =>{
             </Row>
         </Container>
     )
-    }
+    };
+
+export default Sleep

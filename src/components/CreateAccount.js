@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 import {Container,Row,Col, Button, Form} from 'react-bootstrap';
-import '../../styles.css';
+import '../styles.css';
 import { useHistory } from 'react-router-dom';
 
 
-export const CreateAccount = () =>{
+const CreateAccount = () =>{
 
     const {register, handleSubmit}= useForm();
     const history = useHistory()
@@ -87,3 +87,4 @@ export const CreateAccount = () =>{
     </Container>
     )
 }
+export default CreateAccount

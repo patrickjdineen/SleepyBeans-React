@@ -1,7 +1,7 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import {useLocation, useHistory} from 'react-router-dom';
-import {babyServerCalls} from '../../api';
+import {babyServerCalls} from '../api';
 import {Container, Button} from 'react-bootstrap';
 
 //Page for updating heros.
@@ -9,7 +9,7 @@ import {Container, Button} from 'react-bootstrap';
 //uses reactform to handle date to fill
 
 
-export const UpdateBaby = () =>{
+const UpdateBaby = () =>{
     const history = useHistory();
     const location= useLocation();
     const {register, handleSubmit}= useForm();
@@ -40,3 +40,5 @@ export const UpdateBaby = () =>{
     </Container>
     )
 }
+
+export default UpdateBaby
