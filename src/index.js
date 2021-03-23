@@ -4,17 +4,11 @@ import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 import logo from '../src/assets/images/logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { AuthProvider } from './contexts/AuthContext';
-// import { AuthCheck, FirebaseAppProvider } from 'reactfire';
-// import { firebaseConfig } from './firebase';
 
-import Signup from './components/Signup';
 import Login from './components/Login';
-import PrivateRoute from './components/PrivateRoute';
 import Nursery from './components/Nursery';
 import UpdateBaby from './components/UpdateBaby';
 import CreateAccount from './components/CreateAccount';
-import Loginb from './components/Loginb';
 import Home from './components/Home';
 import Sleep from './components/Sleep';
 import CreateBaby from './components/CreateBaby';
@@ -22,7 +16,6 @@ import CreateBaby from './components/CreateBaby';
 
 ReactDOM.render(
   <React.StrictMode>
-  <AuthProvider>
     <Router>
     <Navbar bg="light" variant="light">
       <Navbar.Brand>
@@ -39,26 +32,22 @@ ReactDOM.render(
       </Navbar.Brand>
       
       <Nav.Link><Link to='/nursery'>Nursery</Link></Nav.Link> 
-      <Nav.Link><Link to='/login'>Log In Firebase</Link></Nav.Link>
-      <Nav.Link><Link to='/signup'>Sign Up Firebase</Link></Nav.Link>
-      <Nav.Link><Link to='/loginb'>Log In Flask</Link></Nav.Link>
-      <Nav.Link><Link to='/signupb'>Sign Up Flask</Link></Nav.Link>
+      <Nav.Link><Link to='/login'>Log In Flask</Link></Nav.Link>
+      <Nav.Link><Link to='/signup'>Sign Up Flask</Link></Nav.Link>
     </Navbar>
 
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/sleep" component={Sleep} />
       <Route path='/login' component = {Login} />
-      <Route path='/loginb' component = {Loginb} />
-      <Route path='/signup' component = {Signup} />
-      <Route path='/signupb' component = {CreateAccount} />
+      <Route path='/login' component = {Login} />
+      <Route path='/signup' component = {CreateAccount} />
       <Route path='/createbaby' component = {CreateBaby} />
       <Route path='/update' component={UpdateBaby} />
-      <PrivateRoute path='/nursery' component={Nursery} />
+      <Route path='/nursery' component={Nursery} />
     </Switch>
     
     </Router>
-    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
