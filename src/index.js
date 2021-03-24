@@ -32,8 +32,8 @@ ReactDOM.render(
       </Navbar.Brand>
       
       <Nav.Link><Link to='/nursery'>Nursery</Link></Nav.Link> 
-      <Nav.Link><Link to='/login'>Log In Flask</Link></Nav.Link>
-      <Nav.Link><Link to='/signup'>Sign Up Flask</Link></Nav.Link>
+      <Nav.Link><Link to='/login'>Log In</Link></Nav.Link>
+      <Nav.Link><Link to='/signup'>Sign Up</Link></Nav.Link>
     </Navbar>
 
     <Switch>

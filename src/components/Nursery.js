@@ -26,7 +26,13 @@ const Nursery = () => {
 
     if (babyData.length === 0){
         return (
-            <div>No Data</div>
+            <Container>
+                <Row>
+                <h4>It looks like you currently do not have any babies to track. Please create one!</h4>
+            
+            <Button variant="secondary" onClick = { () => routeChange("",'createbaby')}>Add a new Baby</Button>
+                </Row>
+            </Container>
         )
     }
     return(

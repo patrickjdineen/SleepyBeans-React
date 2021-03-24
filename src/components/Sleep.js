@@ -21,6 +21,20 @@ const Sleep = () =>{
         getData()
     }
 
+    if (sleepData.length === 0){
+        return (
+            <Container>
+                <Row>
+                <h4>It looks like there are currently no babies sleeping, Please start a new session</h4>
+            
+                <form onSubmit = {handleSubmit(onSubmit)}>
+            <input type="text" name="sleep_type" id="sleep_type" placeholder="What kind of sleep?" ref={ register }/>
+            <Button variant="secondary" type="submit">Start Sleep</Button>
+            </form>
+                </Row>
+            </Container>
+        )
+    }
     return(
         <Container>
             <div className="text-center">
